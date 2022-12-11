@@ -1,12 +1,16 @@
 #include <iostream> 
 #include <fstream> 
-#include "cadastrar.h"
+#include "Animais.h"
 #include "menu.h"
 
 using namespace std;
 
-void main(){
+int main(){
+    Animal animal;
+    animal.setNome("123");
+    cout << animal.getNome;
 
+/*
     int escolher;
 
     fstream arquivo("Biologos.dbc", ios_base::in | ios_base::binary);
@@ -20,7 +24,6 @@ void main(){
         switch (escolher)
         {
         case 1:
-            cadastrar();
             break;
         
         default:
@@ -30,6 +33,6 @@ void main(){
     } while (escolher);
     
     
-    arquivo.close();
-    return;
+    arquivo.close();*/
+    return 0;
 }

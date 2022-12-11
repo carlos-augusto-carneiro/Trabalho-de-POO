@@ -6,13 +6,13 @@ int menu(void){
     int opcao;
     
     cout << " Menu Principal\n\n\n";
-    cout << " [1] - Cadastrar Bioglo:\n\n";
-    cout << " [2] - Login:\n\n";
+    cout << " [1] - Cadastrar Animal:\n\n";
+    cout << " [2] - Relatorio:\n\n";
     cout << " [0] - Sair\n\n";
     cin >> opcao;
 
     if (opcao <0 || opcao >2){
-        cout << "Opcao indisponivel ;-;"
+        cout << "Opcao indisponivel ;-;";
         return menu();
     }
 
