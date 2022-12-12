@@ -6,8 +6,7 @@
 using namespace std;
 
 int main(){
-    Animal animal;
-    animal.setNome("123");
+    Animal animal(123,"cachorro","cidade","sim","nao");
     cout << animal.getNome;
 
 /*
