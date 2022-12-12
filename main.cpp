@@ -26,7 +26,12 @@ int main(){
         case 1:
             AdicionarEspecie();
             break;
-        
+        case 2:
+
+            break;
+        case 3:
+
+            break;
         default:
             break;
         }
