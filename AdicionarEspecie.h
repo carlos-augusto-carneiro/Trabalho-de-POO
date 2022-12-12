@@ -9,8 +9,8 @@ using namespace std;
 
 void AdicionarEspecie() {                                                          
    int opcao;
-   cout << " CADASTRAR NOVA ESPECIE\n\n\n";
-   cout << " [1]-Animal\n[2]-Mamifero\n[3]-Reptei\n[4]-Ave\n[5]-Anfibio\n[6]-Inseto\n[7]-Aracnideo\n ";
+   cout << "CADASTRAR NOVA ESPECIE\n\n\n";
+   cout << "[1]-Animal\n[2]-Mamifero\n[3]-Reptei\n[4]-Ave\n[5]-Anfibio\n[6]-Inseto\n[7]-Aracnideo\n ";
    cin >>opcao;
    if (opcao < 1 or opcao > 7 )
    {
@@ -31,7 +31,7 @@ void AdicionarEspecie() {
     cin >> habitatnovo;
     cout << "Esse animal ja foi extinto: " << endl;
     cin >> extincaonovo;
-    cout << "Esse animal é vertebrado: " << endl;
+    cout << "Esse animal e vertebrado: " << endl;
     cin >>vertebradonovo;
 
     Especie->setId(idnovo);
@@ -62,7 +62,7 @@ void AdicionarEspecie() {
     cin >> habitatnovo;
     cout << "Esse animal ja foi extinto: " << endl;
     cin >> extincaonovo;
-    cout << "Esse animal é vertebrado: " << endl;
+    cout << "Esse animal e vertebrado: " << endl;
     cin >>vertebradonovo;
     cout << "Tem pelo: " << endl;
     cin >> pelosnovo;
