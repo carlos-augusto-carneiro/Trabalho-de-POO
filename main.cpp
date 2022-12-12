@@ -1,18 +1,13 @@
 #include <iostream> 
 #include <fstream> 
-#include "Animais.h"
+#include "CLassgeral.h"
 #include "menu.h"
-#include "Aracnideo.h"
-#include "Inseto.h"
-#include "Anfibio.h"
-#include "Ave.h"
-#include "Reptei.h"
-#include "Mamifero.h"
 #include "CriarArquivo.h"
 #include "AdicionarEspecie.h"
 
 
 using namespace std;
+
 
 int main(){
   
