@@ -16,8 +16,6 @@ public:
 
     Animal(int id, string nome, string habitat, string extincao, string vertebrado){
 
-        cout << "Registrando nova especie:"<<endl;
-
         this->id = id;
         this->nome = nome;
         this->habitat = habitat;

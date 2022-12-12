@@ -15,7 +15,6 @@ private:
     string bico;
 public:
     Ave(string penas, string asas, string voo, string oviparos, string bico, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->penas=penas;
         this->asas=asas;
         this->voo=voo;

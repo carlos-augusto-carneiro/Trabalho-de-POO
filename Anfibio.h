@@ -13,7 +13,6 @@ private:
     string fase;
 public:
     Anfibio(string ectotermicos, string pele_permeavel, string fase, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->ectotermicos=ectotermicos;
         this->pele_permeavel=pele_permeavel;
         this->fase=fase;

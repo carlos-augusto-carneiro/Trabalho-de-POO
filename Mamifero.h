@@ -13,7 +13,6 @@ private:
     string amamentacao;
 public:
     Mamifero(string pelos, string diafragma, string amamentacao, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->pelos=pelos;
         this->diafragma=diafragma;
         this->amamentacao=amamentacao;
@@ -27,7 +26,7 @@ public:
     void setDiafragma(string novodiafragma){
         this->diafragma=novodiafragma;
     }
-    void setamamentacao(string novoamamentacao){
+    void setAmamentacao(string novoamamentacao){
         this->amamentacao=novoamamentacao;
     }
 

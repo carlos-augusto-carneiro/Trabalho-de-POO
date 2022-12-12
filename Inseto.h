@@ -14,7 +14,6 @@ private:
     string veneno;
 public:
     Inseto(string oviparo, string corpo_tripartido, string antenas, string veneno, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->oviparo=oviparo;
         this->corpo_tripartido=corpo_tripartido;
         this->antenas=antenas;

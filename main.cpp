@@ -2,17 +2,23 @@
 #include <fstream> 
 #include "Animais.h"
 #include "menu.h"
+#include "Aracnideo.h"
+#include "Inseto.h"
+#include "Anfibio.h"
+#include "Ave.h"
+#include "Reptei.h"
+#include "Mamifero.h"
+#include "CriarArquivo.h"
+#include "AdicionarEspecie.h"
+
 
 using namespace std;
 
 int main(){
-    Animal animal(123,"cachorro","cidade","sim","nao");
-    cout << animal.getNome;
-
-/*
+  
     int escolher;
 
-    fstream arquivo("Biologos.dbc", ios_base::in | ios_base::binary);
+    fstream arquivo("Catalogo.txt", ios_base::in | ios_base::binary);
 
     if(arquivo.fail()){
         criarArquivo();
@@ -23,6 +29,7 @@ int main(){
         switch (escolher)
         {
         case 1:
+            AdicionarEspecie();
             break;
         
         default:
@@ -32,6 +39,6 @@ int main(){
     } while (escolher);
     
     
-    arquivo.close();*/
+    arquivo.close();
     return 0;
 }

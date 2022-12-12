@@ -14,7 +14,6 @@ private:
     string veneno;
 public:
     Aracnideo(string oviparo, string exoesqueleto_rigido, string patas_articuladas, string veneno, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->oviparo=oviparo;
         this->exoesqueleto_rigido=exoesqueleto_rigido;
         this->patas_articuladas=patas_articuladas;

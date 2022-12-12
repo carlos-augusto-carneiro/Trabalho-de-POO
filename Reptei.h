@@ -13,7 +13,6 @@ private:
     string oviparo;
 public:
     Reptei(string ectotermicos, string pele_imperavel, string oviparo, int id, string nome, string habitat, string extincao, string vertebrado) : Animal(id, nome, habitat, extincao, vertebrado){
-        cout << "Adicionando carateristica do mamifero" << endl;
         this->ectotermicos=ectotermicos;
         this->pele_imperavel=pele_imperavel;
         this->oviparo=oviparo;
