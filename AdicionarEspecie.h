@@ -41,7 +41,7 @@ void AdicionarEspecie() {
 
     fstream arquivo;
     arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
+    arquivo.seekp(0, ios::end); 
     arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Animal));
     arquivo.flush();
     arquivo.close();                                             

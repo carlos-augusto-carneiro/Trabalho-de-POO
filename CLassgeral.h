@@ -17,7 +17,6 @@ private:
 public:
 
     Animal(int id, string nome, string habitat, string extincao, string vertebrado){
-
         this->id = id;
         this->nome = nome;
         this->habitat = habitat;
