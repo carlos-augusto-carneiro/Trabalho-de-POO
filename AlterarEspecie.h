@@ -1,20 +1,19 @@
 #include <iostream> 
 #include <fstream> 
 #include <string> 
-#include <conio.h>
 #include "CLassgeral.h"
 
 using namespace std;
 
 void alterar(void) {                                                   // MENU DE ALTERAÇÃO DE NOME OU DATA COM EXIBIÇÃO DE REGISTRO
-   short opcao;                                                        // ARMAZENA A OPCAO DO MENU
+   Animal *Especie;                                                      // ARMAZENA A OPCAO DO MENU
    string selecao;                                                     // PARA PERSONALIZAÇÃO DE TEXTO NO MENU
    do {
       limpa();                                                         // LIMPA A TELA E POSICIONA O CURSOR
       cout << " Alterar registro\n\n\n";
       cout << " Selecione a opcao:\n\n";
       cout << " [1] - Alterar nome.\n\n";
-      cout << " [2] - Alterar data de nascimento.\n\n\n";
+      cout << " [2] - Alterar id.\n\n\n";
       cout << " Entre a opcao desejada: ";
       cin >> opcao;                                                     // LEITURA DA OPÇÃO DESEJADA
       cin.ignore(80, '\n');                                             // LIMPA BUFFER DO TECLADO
@@ -30,21 +29,19 @@ void alterar(void) {                                                   // MENU D
    if (buscaNome(pnome)) {                                              // SE ENCONTROU O REGISTRO
       /// NESSE MOMENTO OS DADOS CORRETOS ESTÃO NOS ATRIBUTOS DO OBJETO
       if (opcao == 1) {                                                 // SE FOI SOLICITADA A ALTERAÇÃO DE NOME
-         cout << " Data de nascimento:\n ";
-         cout << pessoa.getData() << "\n\n";                            // EXIBE A DATA DE NASCIMENTO
-         cout << " Entre o novo nome:\n ";
-         alteraNome(encontraPosicao(pnome));                            // EFETUA A ALTERAÇÃO DO NOME
+         cout << " id:\n ";
+         cout << Especie.getData() << "\n\n";                            // EXIBE A DATA DE NASCIMENTO
+         cout << " Novo nome:\n ";
       } else {                                                          // SE FOI SOLICITADA A ALTERAÇÃO DE NOME
          cout << " Data de nascimento cadastrada:\n ";
-         cout << pessoa.getData() << "\n\n";                            // EXIBE A DATA DE NASCIMENTO
+         cout << Especie.getData() << "\n\n";                            // EXIBE A DATA DE NASCIMENTO
          cout << " Entre a nova data de nascimento:\n ";
-         alteraData(encontraPosicao(pnome));                            // EFETUA A ALTERAÇÃO DA DATA
       }
       cout << "\n\n\n\n";
-      pausa(1);                                                         // PAUSA COM MENSAGEM ADICIONAL
+                                                              // PAUSA COM MENSAGEM ADICIONAL
    }
    else {                                                               // SE NÃO ENCONTROU O REGISTRO
       cout << endl << "\n Registro nao encontrado. ";
-      pausa(0);                                                         // PAUSA SEM MENSAGEM ADICIONAL
+                                                             // PAUSA SEM MENSAGEM ADICIONAL
    }
 }

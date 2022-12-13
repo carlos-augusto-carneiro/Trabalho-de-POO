@@ -1,7 +1,6 @@
 #include <iostream> 
 #include <fstream> 
 #include <string> 
-#include <conio.h>
 #ifndef _MYHEADER_
 #define _MYHEADER_
 

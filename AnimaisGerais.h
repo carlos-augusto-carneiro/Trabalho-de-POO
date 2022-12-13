@@ -1,13 +1,79 @@
-#include <iostream> 
-#include <fstream> 
-#include <string> 
+#include <iostream>
+#include <string>
+#include <vector>
 #include "CLassgeral.h"
-
 
 using namespace std;
 
-void AdicionarEspecie() {                                                          
-   int opcao;
+vector<Animais *> Catalogo;
+
+void SalvarAnimal(int id, string nome, string habitat, string extincao, string vertebrado){
+    Animal *Especie = new Animal(id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarMamifero(string pelos, string diafragma, string amamentacao, int id, string nome, string habitat, string extincao, string vertebrado){
+    Mamifero *Especie = new Mamifero(pelos, diafragma, amamentacao, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarAnfibio(string ectotermicos, string pele_permeavel, string fase, int id, string nome, string habitat, string extincao, string vertebrado){
+    Anfibio *Especie = new Anfibio(ectotermicos, pele_permeavel, fase, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarAve(string penas, string asas, string voo, string oviparos, string bico, int id, string nome, string habitat, string extincao, string vertebrado){
+    Ave *Especie = new Ave(penas, asas, voo, oviparos, bico, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarReptei(string ectotermicos, string pele_imperavel, string oviparo, int id, string nome, string habitat, string extincao, string vertebrado){
+    Reptei *Especie = new Reptei(ectotermicos, pele_imperavel, oviparo, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarAracnideo(string oviparo, string exoesqueleto_rigido, string patas_articuladas, string veneno, int id, string nome, string habitat, string extincao, string vertebrado){
+    Aracnideo *Especie = new Aracnideo(oviparo, exoesqueleto_rigido, patas_articuladas, veneno, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+void SalvarInseto(string oviparo, string corpo_tripartido, string antenas, string veneno, int id, string nome, string habitat, string extincao, string vertebrado){
+    Inseto *Especie = new Inseto(oviparo, corpo_tripartido, antenas, veneno, id, nome, habitat, extincao, vertebrado);
+
+    Catalogo.push_back(Especie)
+    
+    system("cls");
+    cout << "Dados Salvos"<<endl;
+}
+
+
+void cadastrarEspecie(){
+
+    int opcao;
    cout << "CADASTRAR NOVA ESPECIE\n\n\n";
    cout << "[1]-Animal\n[2]-Mamifero\n[3]-Reptei\n[4]-Ave\n[5]-Anfibio\n[6]-Inseto\n[7]-Aracnideo\n";
    cin >>opcao;
@@ -15,13 +81,12 @@ void AdicionarEspecie() {
    {
     cout <<"opcao não encontrada"<<endl;
    }
-   else if (opcao == 1)
-   {
-    Animal *Especie; //Instanciando o objeto Especie
+   else if (opcao == 1){
 
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo;
 
+    cout <<"Registrar Animal:"<endl;
     cout << "Digite o id: " << endl;
     cin >> idnovo;
     cout << "Digite o nome: " << endl;
@@ -33,22 +98,10 @@ void AdicionarEspecie() {
     cout << "Esse animal e vertebrado: " << endl;
     cin >>vertebradonovo;
 
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Animal));
-    arquivo.flush();
-    arquivo.close();                                             
+    SalvarAnimal(idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
    else if (opcao == 2)
    {
-    Mamifero *Especie; //Instanciando o objeto Especie
 
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,pelosnovo,diafragmanovo,amamentacaonovo;
@@ -69,27 +122,11 @@ void AdicionarEspecie() {
     cin >> diafragmanovo;
     cout << "Amamenta os filhos: "  << endl;
     cin >> amamentacaonovo;
-
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setPelos(pelosnovo);
-    Especie->setDiafragma(diafragmanovo);
-    Especie->setAmamentacao(amamentacaonovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Mamifero));
-    arquivo.flush();
-    arquivo.close();   
+ 
+    SalvarMamifero(pelosnovo, diafragmanovo, amamentacaonovo, idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
    else if (opcao == 3)
    {
-    Reptei *Especie; //Instanciando o objeto Especie
-
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,oviparonovo,peleimperavelnovo,ectotermiconovo;
 
@@ -110,26 +147,11 @@ void AdicionarEspecie() {
     cout << "É ectotermico: "  << endl;
     cin >> ectotermiconovo;
 
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setOviparo(oviparonovo);
-    Especie->setPeleImperavel(peleimperavelnovo);
-    Especie->setEctotermicos(ectotermiconovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Reptei));
-    arquivo.flush();
-    arquivo.close();   
+    SalvarReptei(ectotermiconovo, peleimperavelnovo, oviparonovo, idnovo, nomenovo, extincaonovo, vertebradonovo);
    }
-   else if (opcao == 4)
+    else if (opcao == 4)
    {
-    Ave *Especie; //Instanciando o objeto Especie
-
+    
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,oviparonovo,voonovo,biconovo,asasnovo,penasnovo;
 
@@ -154,27 +176,10 @@ void AdicionarEspecie() {
     cout << "Tem penas: "  << endl;
     cin >> penasnovo;
 
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setOviparo(oviparonovo);
-    Especie->setVoo(voonovo);
-    Especie->setPenas(penasnovo);
-    Especie->setAsas(asasnovo);
-    Especie->setBico(biconovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Ave));
-    arquivo.flush();
-    arquivo.close();
+    SalvarAve(penasnovo, asasnovo, voonovo, oviparonovo, biconovo, idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
    else if (opcao == 5)
    {
-    Anfibio *Especie; //Instanciando o objeto Especie
 
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,fasenovo,ectotermiconovo,pele_permeavelnova;
@@ -196,28 +201,10 @@ void AdicionarEspecie() {
     cout << "Tem pele permeavel: "  << endl;
     cin >> pele_permeavelnova;
     
-
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setFase(fasenovo);
-    Especie->setEctotermicos(ectotermiconovo);
-    Especie->setPelePermeavel(pele_permeavelnova);
-
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Anfibio));
-    arquivo.flush();
-    arquivo.close();
+    SalvarAnfibio(ectotermiconovo, pele_permeavelnova, fasenovo, idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
    else if (opcao == 6)
    {
-    Inseto *Especie; //Instanciando o objeto Especie
-
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,oviparonovo,antenasnovo,venenonovo,corpo_tripartidonovo;
 
@@ -240,27 +227,10 @@ void AdicionarEspecie() {
     cout << "Tem antenas: "  << endl;
     cin >> antenasnovo;
 
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setOviparo(oviparonovo);
-    Especie->setVeneno(venenonovo);
-    Especie->setCorpoTripartido(corpo_tripartidonovo);
-    Especie->setAntenas(antenasnovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Inseto));
-    arquivo.flush();
-    arquivo.close();  
+    SalvarInseto(oviparonovo, corpo_tripartidonovo, antenasnovo, venenonovo, idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
    else if (opcao == 7)
    {
-    Aracnideo *Especie; //Instanciando o objeto Especie
-
     int idnovo;
     string nomenovo,habitatnovo,extincaonovo,vertebradonovo,oviparonovo,exoequeleto_rigidonovo,venenonovo,patas_articuladasnovo;
 
@@ -283,22 +253,13 @@ void AdicionarEspecie() {
     cout << "Possui exoesqueleto rigido: "  << endl;
     cin >> exoequeleto_rigidonovo;
 
-    Especie->setId(idnovo);
-    Especie->setNome(nomenovo);
-    Especie->setHabitat(habitatnovo);
-    Especie->setExtincao(extincaonovo);
-    Especie->setVetebrado(vertebradonovo);
-    Especie->setOviparo(oviparonovo);
-    Especie->setVeneno(venenonovo);
-    Especie->setPatasArticuladas(patas_articuladasnovo);
-    Especie->setExoesqueletoRigido(exoequeleto_rigidonovo);
-
-    fstream arquivo;
-    arquivo.open("Catalogo.txt", ios_base::out | ios_base::binary);
-    arquivo.seekp(0, ios::end);
-    arquivo.write(reinterpret_cast<char*>(&Especie), sizeof(class Aracnideo));
-    arquivo.flush();
-    arquivo.close();
+    SalvarAracnideo(oviparonovo, exoequeleto_rigidonovo, patas_articuladasnovo, venenonovo, idnovo, nomenovo, habitatnovo, extincaonovo, vertebradonovo);
    }
  
+}
+
+void leer(){
+
+    cout 
+
 }

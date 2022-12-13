@@ -4,6 +4,7 @@
 #include "menu.h"
 #include "CriarArquivo.h"
 #include "AdicionarEspecie.h"
+#include "RemoverEspecie.h"
 
 
 using namespace std;
@@ -27,7 +28,7 @@ int main(){
             AdicionarEspecie();
             break;
         case 2:
-
+            
             break;
         case 3:
 
